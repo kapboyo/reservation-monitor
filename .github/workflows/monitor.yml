@@ -3,7 +3,7 @@ name: Reservation Monitor
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/16 * * * *'
+    - cron: '*/31 * * * *'
 
 jobs:
   run-monitor:
