@@ -17,7 +17,7 @@ TARGET_ROWS = [
     "普通車ＰＭ"
 ]
 
-END_DATE = datetime(2026, 8, 10)
+END_DATE = datetime(2026, 7, 23)
 
 
 def log(message):
