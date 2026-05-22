@@ -2,7 +2,7 @@ name: Reservation Monitor
 
 on:
   schedule:
-    - cron: '7 * * * *'
+    - cron: '*/16 * * * *'
 
   
 jobs:
