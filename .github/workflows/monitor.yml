@@ -1,9 +1,8 @@
 name: Reservation Monitor
 
 on:
-  schedule:
-    - cron: '*/16 * * * *'
-
+  repository_dispatch:
+    types: [external-cron] # This matches the event name we will send
   
 jobs:
   run-monitor:
