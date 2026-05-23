@@ -1,6 +1,7 @@
 name: Reservation Monitor
 
 on:
+  workflow_dispatch:
   repository_dispatch:
     types: [external-cron] # This matches the event name we will send
   
