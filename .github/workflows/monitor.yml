@@ -3,8 +3,8 @@ name: Reservation Monitor
 on:
   workflow_dispatch:
   repository_dispatch:
-    types: [external-cron] # This matches the event name we will send
-  
+    types: [external-cron]
+
 jobs:
   run-monitor:
     runs-on: ubuntu-latest
@@ -17,12 +17,16 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: 'pip' # Speeds up Python dependencies
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
 
       - name: Install Playwright browsers
-        run: playwright install --with-deps chromium
+        run: |
+          playwright install --with-deps chromium
 
-  
       - name: Run monitor
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
